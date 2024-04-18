@@ -21,7 +21,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: Public Sans;
   background-color: #FFE8DA;
 }
