@@ -105,7 +105,7 @@ function loadPencil(year) {
   middle.position.set(0.0031*scaleFactor, 0, 0)
   middle.rotateY(-3.14159/2)
   
-  loader.load('middle.gltf', function( gltf ) {
+  loader.load('Middle.gltf', function( gltf ) {
     gltf.scene.scale.set(scaleFactor, scaleFactor, scaleFactor)
     gltf.scene.translateZ(-0.02915*scaleFactor)
     middle.add(gltf.scene)
@@ -116,7 +116,7 @@ function loadPencil(year) {
   tip.position.set(0, 0, 0)
   tip.rotateY(-3.14159/2)
   
-  loader.load('tip.gltf', function( gltf ) {
+  loader.load('Tip.gltf', function( gltf ) {
     gltf.scene.translateZ(-0.10215*scaleFactor)
     gltf.scene.scale.set(scaleFactor, scaleFactor, scaleFactor)
     tip.add(gltf.scene)
@@ -127,7 +127,7 @@ function loadPencil(year) {
   eraser.position.set(0, 0, 0)
   eraser.rotateY(-3.14159/2)
   
-  loader.load('eraser.gltf', function( gltf ) {
+  loader.load('Eraser.gltf', function( gltf ) {
     gltf.scene.translateZ(0.0245*scaleFactor)
     gltf.scene.scale.set(scaleFactor, scaleFactor, scaleFactor)
     eraser.add(gltf.scene)
@@ -321,7 +321,7 @@ const backLight = new THREE.PointLight(0xffffff, 0.25, 100)
 backLight.position.set(-10, -10, 0)
 scene.add(backLight)
 
-const ambLight = new THREE.AmbientLight(0xffffff, 0.75)
+const ambLight = new THREE.AmbientLight(0xffffff, 0.80)
 scene.add(ambLight)
 
 //Camera
@@ -345,8 +345,9 @@ renderer.render(scene, camera)
 //Controls
 const controls = new OrbitControls(camera, canvas) // experiment with other controls in import statement?
 controls.enableDamping = true
-//controls.enableZoom = false
-//controls.enablePan = false
+controls.enableZoom = false
+controls.enablePan = false
+controls.enableRotate = false
 //controls.autoRotate = true
 //controls.autoRotateSpeed = 10
 
